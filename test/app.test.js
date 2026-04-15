@@ -28,10 +28,11 @@ function callRoute(url, method = "GET") {
 test("GET /health returns service status", async () => {
   const response = await callRoute("/health");
   const body = JSON.parse(response.body);
+  const expectedService = process.env.APP_NAME || "CI/CD Demo App";
 
   assert.equal(response.statusCode, 200);
   assert.equal(body.status, "ok");
-  assert.equal(body.service, "CI/CD Demo App");
+  assert.equal(body.service, expectedService);
 });
 
 test("GET /api/info returns pipeline stages", async () => {
