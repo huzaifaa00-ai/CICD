@@ -9,11 +9,6 @@ pipeline {
     KUBECONFIG_CREDENTIALS = 'kubeconfig-file'
   }
 
-  options {
-    timestamps()
-    ansiColor('xterm')
-  }
-
   stages {
     stage('Checkout') {
       steps {
