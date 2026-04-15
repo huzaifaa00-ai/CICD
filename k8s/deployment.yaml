@@ -27,7 +27,7 @@ spec:
             - name: APP_NAME
               value: CI/CD Demo App
             - name: APP_VERSION
-              value: APP_VERSION_PLACEHOLDER
+              value: "APP_VERSION_PLACEHOLDER"
           readinessProbe:
             httpGet:
               path: /health
