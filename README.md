@@ -128,3 +128,4 @@ Use one Ubuntu EC2 instance with K3s for the deployment target. Jenkins can stay
 - Add Prometheus and Grafana
 - Add Argo CD for GitOps
 # CICD
+# CICD
