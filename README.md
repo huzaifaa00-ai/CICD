@@ -129,3 +129,4 @@ Use one Ubuntu EC2 instance with K3s for the deployment target. Jenkins can stay
 - Add Argo CD for GitOps
 # CICD
 # CICD
+# CICD
