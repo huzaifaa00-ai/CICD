@@ -1,0 +1,9 @@
+docker-workflow
+credentials-binding
+git
+github
+pipeline-stage-view
+workflow-aggregator
+ws-cleanup
+plain-credentials
+matrix-auth

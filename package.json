@@ -1,0 +1,26 @@
+{
+  "name": "devops-cicd-major-project",
+  "version": "1.0.0",
+  "description": "End-to-end CI/CD pipeline demo with Node.js, Docker, Jenkins, and Kubernetes.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js",
+    "test:ci": "node --test --test-reporter=spec test/*.test.js",
+    "smoke": "node scripts/smoke-check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "devops",
+    "cicd",
+    "jenkins",
+    "docker",
+    "kubernetes"
+  ],
+  "author": "Ravi Pratap Singh",
+  "license": "MIT"
+}

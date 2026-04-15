@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{APP_NAME}}</title>
+    <style>
+      :root {
+        --bg: #f4efe7;
+        --panel: rgba(255, 255, 255, 0.72);
+        --ink: #162521;
+        --muted: #48615a;
+        --accent: #c46b48;
+        --accent-dark: #8e442a;
+        --border: rgba(22, 37, 33, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(196, 107, 72, 0.18), transparent 32%),
+          radial-gradient(circle at bottom right, rgba(22, 37, 33, 0.14), transparent 28%),
+          linear-gradient(135deg, #efe7dc 0%, #f8f5ee 45%, #e9efe8 100%);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .card {
+        width: min(920px, 100%);
+        padding: 32px;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: var(--panel);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 24px 80px rgba(22, 37, 33, 0.12);
+      }
+
+      .eyebrow {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        color: var(--accent-dark);
+        margin: 0 0 12px;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 5vw, 4.8rem);
+        line-height: 0.96;
+        margin: 0;
+        max-width: 10ch;
+      }
+
+      p {
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .metric {
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(22, 37, 33, 0.08);
+      }
+
+      .metric span {
+        display: block;
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+      }
+
+      .metric strong {
+        font-size: 1.2rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      a {
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .secondary {
+        border: 1px solid rgba(22, 37, 33, 0.15);
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">Major Project • DevOps • CI/CD</p>
+      <h1>{{APP_NAME}}</h1>
+      <p>
+        A production-style demo application for a Jenkins-driven CI/CD pipeline.
+        It supports automated testing, Docker image creation, registry publishing,
+        and Kubernetes deployment on AWS-hosted infrastructure.
+      </p>
+
+      <section class="grid">
+        <article class="metric">
+          <span>Version</span>
+          <strong>{{APP_VERSION}}</strong>
+        </article>
+        <article class="metric">
+          <span>Environment</span>
+          <strong>{{ENVIRONMENT}}</strong>
+        </article>
+        <article class="metric">
+          <span>Health Endpoint</span>
+          <strong>/health</strong>
+        </article>
+        <article class="metric">
+          <span>Info API</span>
+          <strong>/api/info</strong>
+        </article>
+      </section>
+
+      <div class="actions">
+        <a class="primary" href="/health">Check Health</a>
+        <a class="secondary" href="/api/info">View Pipeline Info</a>
+      </div>
+    </main>
+  </body>
+</html>
